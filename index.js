@@ -18,7 +18,7 @@ app.get('/', function (req, res) {
 
 // for Facebook verification
 app.get('/webhook/', function (req, res) {
-    if (req.query['hub.verify_token'] === 'Aha_Moment_Labs') {
+    if (req.query['hub.verify_token'] === 'UTeam') {
         res.send(req.query['hub.challenge'])
     }
     res.send('Error, wrong token')
@@ -144,7 +144,7 @@ function sendGenericMessage(sender) {
         }
     }
     request({
-        url: 'https://graph.facebook.com/v2.6/me/messages',
+        url: 'https://graph.facebook.com/v2.8/me/messages',
         qs: {access_token:token},
         method: 'POST',
         json: {
